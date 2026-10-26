@@ -12,6 +12,7 @@ use Illuminate\Filesystem\Filesystem;
 use Maatwebsite\Excel\Parsers\ExcelParser;
 use Maatwebsite\Excel\Classes\FormatIdentifier;
 use Maatwebsite\Excel\Exceptions\LaravelExcelException;
+use Illuminate\Support\Arr;
 
 /**
  * LaravelExcel Excel reader
@@ -975,7 +976,7 @@ class LaravelExcelReader
     {
         $this->formatDates = true;
         $columns           = func_get_args();
-        $this->dateColumns = array_merge($this->dateColumns, array_flatten($columns));
+        $this->dateColumns = array_merge($this->dateColumns, Arr::flatten($columns));
 
         return $this;
     }
