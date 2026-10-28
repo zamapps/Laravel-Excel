@@ -24,6 +24,7 @@ use Illuminate\Support\Arr;
  * @author     Maatwebsite <info@maatwebsite.nl>
  * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
  */
+#[\AllowDynamicProperties]
 class LaravelExcelReader
 {
     /**
@@ -676,7 +677,7 @@ class LaravelExcelReader
      * @param callable      $callback
      * @param bool|string   $shouldQueue
      */
-    public function chunk($size = 10, callable $callback, $shouldQueue = true)
+    public function chunk($size, callable $callback, $shouldQueue = true)
     {
         // Get total rows
         $totalRows = $this->getTotalRowsOfFile();

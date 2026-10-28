@@ -22,6 +22,7 @@ use Illuminate\Support\Str;
  * @author     Maatwebsite <info@maatwebsite.nl>
  * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
  */
+#[\AllowDynamicProperties]
 class LaravelExcelWorksheet extends PHPExcel_Worksheet {
 
     /**

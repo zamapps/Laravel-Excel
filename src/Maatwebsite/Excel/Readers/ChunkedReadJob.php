@@ -65,7 +65,7 @@ class ChunkedReadJob implements ShouldQueue
      */
     public function __construct(
         $file,
-        $sheets = null,
+        $sheets,
         $startRow,
         $startIndex,
         $chunkSize,

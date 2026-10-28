@@ -4,6 +4,7 @@ use PHPExcel_IOFactory;
 use Illuminate\Filesystem\Filesystem;
 use Maatwebsite\Excel\Exceptions\LaravelExcelException;
 
+#[\AllowDynamicProperties]
 class FormatIdentifier {
 
     /**

@@ -180,7 +180,7 @@ class Html extends PHPExcel_Reader_HTML {
         else
         {
             // Load HTML from string
-            @$dom->loadHTML(mb_convert_encoding($pFilename, 'HTML-ENTITIES', 'UTF-8'));
+            @$dom->loadHTML(mb_encode_numericentity($pFilename, [0x80, 0x10FFFF, 0, 0x1FFFFF], 'UTF-8'));
 
             // Let the css parser find all stylesheets
             $this->cssParser->findStyleSheets($dom);
@@ -192,7 +192,7 @@ class Html extends PHPExcel_Reader_HTML {
             $dom = new DOMDocument;
 
             // Load again with css included
-            $loaded = @$dom->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'));
+            $loaded = @$dom->loadHTML(mb_encode_numericentity($html, [0x80, 0x10FFFF, 0, 0x1FFFFF], 'UTF-8'));
         }
 
         if ( $loaded === false )

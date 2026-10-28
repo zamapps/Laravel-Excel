@@ -3,6 +3,7 @@
 use PHPExcel_Settings;
 use PHPExcel_CachedObjectStorageFactory;
 
+#[\AllowDynamicProperties]
 class Cache {
 
     /**

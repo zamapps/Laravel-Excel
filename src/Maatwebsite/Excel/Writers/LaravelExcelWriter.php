@@ -22,6 +22,7 @@ use Illuminate\Support\Str;
  * @author     Maatwebsite <info@maatwebsite.nl>
  * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
  */
+#[\AllowDynamicProperties]
 class LaravelExcelWriter {
 
     /**
@@ -628,7 +629,7 @@ class LaravelExcelWriter {
      * @param $headers
      * @throws LaravelExcelException
      */
-    protected function _setHeaders(Array $headers = [], Array $default)
+    protected function _setHeaders(Array $headers, Array $default)
     {
         if (headers_sent()) throw new LaravelExcelException('[ERROR]: Headers already sent');
 
