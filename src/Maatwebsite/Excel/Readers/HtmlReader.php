@@ -1055,7 +1055,7 @@ class Html extends PHPExcel_Reader_HTML {
 
             // FONT WEIGHT
             case 'font-weight':
-                if ( $value == 'bold' || $value >= 500 )
+                if ( $value == 'bold' || (is_numeric($value) && $value >= 500) )
                     $cells->getFont()->setBold(true);
                 break;
 
